@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>sinan ek portfolio</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="norell-style.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Preloader / Welcome Animation -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-content">
+      <h2 class="welcome-text">Welcome to</h2>
+      <h1 class="portfolio-text">Sinan Portfolio</h1>
+    </div>
+  </div>
+
+  <!-- 1. Header Section (Norell Exact Match) -->
+  <header class="norell-header">
+    <div class="norell-logo">
+      <a href="#home">sinan<span class="trademark">®</span></a>
+    </div>
+
+    <nav class="norell-nav">
+      <a href="#about">About</a>
+      <a href="#works">Works</a>
+      <a href="assets/sinan-resume.pdf" target="_blank">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="norell-menu-btn" aria-label="Toggle Menu">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </button>
+  </header>
+
+  <!-- 2. Parallax Banner Section -->
+  <section class="norell-banner-section">
+    <!-- Background Image with Parallax -->
+    <div class="parallax-model-bg"></div>
+
+    <!-- Giant Text -->
+    <div class="banner-content">
+      <h1 class="huge-brand-text">
+        Sinan
+        <!-- Floating circled R trademark -->
+        <span class="huge-trademark">®</span>
+      </h1>
+    </div>
+  </section>
+
+  <!-- Scroll space to demonstrate parallax -->
+  <section class="dummy-scroll-section">
+    <h2>Scroll up and down to see the parallax animation!</h2>
+    <p>This is a separate section file as requested. You can copy this code and link the external CSS into your main
+      project.</p>
+  </section>
+
+  <!-- Scripts -->
+  <script>
+    // Preloader Logic
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("no-scroll");
+      
+      setTimeout(() => {
+        const preloader = document.getElementById("preloader");
+        if(preloader) {
+          preloader.classList.add("hidden");
+        }
+        
+        setTimeout(() => {
+          document.body.classList.remove("no-scroll");
+        }, 1000); // Wait for fade transition
+      }, 2500); // Display time before hiding
+    });
+
+    // Simple Parallax Script
+    document.addEventListener("scroll", () => {
+      const scrollPosition = window.pageYOffset;
+      const parallaxBg = document.querySelector('.parallax-model-bg');
+      const hugeText = document.querySelector('.huge-brand-text');
+
+      // Move background down at a different speed for parallax effect
+      if (parallaxBg) {
+        parallaxBg.style.transform = `translateY(${scrollPosition * 0.4}px)`;
+      }
+
+      // Optional: slight parallax on text too for depth
+      if (hugeText) {
+        hugeText.style.transform = `translateY(${scrollPosition * 0.15}px)`;
+      }
+    });
+  </script>
+</body>
+
+</html>

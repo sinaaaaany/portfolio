@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume - Mumajjad Sinan EK | Captain & Site Manager</title>
+  <meta name="description" content="Resume of Mumajjad Sinan EK - Captain & Site Manager, BCA Graduate, Calicut University, Malappuram, Kerala" />
+  <link rel="icon" type="image/jpeg" href="assets/images/avatar.jpg" />
+
+  <!-- Google Fonts: Space Grotesk & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --primary-navy: #061a14;
+      --navy-dark: #05140f;
+      --navy-light: #0d3829;
+      --text-dark: #06281c;
+      --text-muted: #4e7363;
+      --accent-blue: #059669;
+      --accent-cyan: #10b981;
+      --sidebar-bg: linear-gradient(180deg, #061a14 0%, #0d3829 55%, #05140f 100%);
+      --sidebar-text: #f0fdf4;
+      --sidebar-sub: #d1fae5;
+      --border-line: #d1fae5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #f7fbf9;
+      background-image: 
+        radial-gradient(at 10% 20%, rgba(167, 243, 208, 0.45) 0px, transparent 50%),
+        radial-gradient(at 90% 10%, rgba(209, 250, 229, 0.55) 0px, transparent 50%),
+        radial-gradient(at 50% 80%, rgba(167, 243, 208, 0.35) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text-dark);
+      padding: 2rem 1rem 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* Top Floating Action Bar */
+    .action-bar {
+      position: sticky;
+      top: 1rem;
+      z-index: 100;
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(16px);
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      box-shadow: 0 10px 30px rgba(6, 26, 20, 0.08);
+    }
+
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.25rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 9999px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-print {
+      background: linear-gradient(135deg, #059669, #10b981);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(5, 150, 105, 0.35);
+    }
+
+    .btn-print:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+    }
+
+    .btn-back {
+      background: #ffffff;
+      color: #06281c;
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      box-shadow: 0 2px 8px rgba(6, 26, 20, 0.05);
+    }
+
+    .btn-back:hover {
+      background: #059669;
+      color: #ffffff;
+      border-color: #059669;
+      transform: translateY(-2px);
+    }
+
+    /* Resume Document Wrapper */
+    .resume-sheet {
+      width: 100%;
+      max-width: 850px;
+      min-height: 1100px;
+      background: #ffffff;
+      box-shadow: 0 25px 70px -15px rgba(6, 26, 20, 0.22), 0 0 40px rgba(52, 211, 153, 0.16);
+      border: 2px solid rgba(16, 185, 129, 0.3);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+    }
+
+    /* Sidebar Column (Left) */
+    .resume-sidebar {
+      width: 38%;
+      background: var(--sidebar-bg);
+      color: var(--sidebar-text);
+      padding: 2.5rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      border-right: 2px solid rgba(52, 211, 153, 0.25);
+    }
+
+    .sidebar-avatar-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar-avatar {
+      width: 135px;
+      height: 135px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 3.5px solid #34d399;
+      box-shadow: 0 0 30px rgba(52, 211, 153, 0.45);
+    }
+
+    .sidebar-section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #34d399;
+      border-bottom: 2px solid rgba(52, 211, 153, 0.35);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      margin-bottom: 0.9rem;
+      font-size: 0.92rem;
+      color: var(--sidebar-sub);
+      word-break: break-word;
+    }
+
+    .contact-item i {
+      color: #34d399;
+      font-size: 1rem;
+      margin-top: 0.2rem;
+      width: 18px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .contact-item a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-item a:hover {
+      color: #6ee7b7;
+      text-decoration: underline;
+    }
+
+    .education-item {
+      margin-bottom: 1.25rem;
+    }
+
+    .edu-years {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #34d399;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.25rem;
+    }
+
+    .edu-institution {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+
+    .edu-degree {
+      font-size: 0.88rem;
+      color: var(--sidebar-sub);
+      line-height: 1.4;
+    }
+
+    .sidebar-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .sidebar-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--sidebar-sub);
+      line-height: 1.45;
+    }
+
+    .sidebar-list li::before {
+      content: '◆';
+      position: absolute;
+      left: 0;
+      color: #34d399;
+      font-size: 0.75rem;
+      line-height: 1;
+      top: 2px;
+    }
+
+    /* Main Content Column (Right) */
+    .resume-main {
+      width: 62%;
+      padding: 3rem 2.5rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+      background: #ffffff;
+    }
+
+    .resume-name-block {
+      border-bottom: 3px solid #059669;
+      padding-bottom: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .resume-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .resume-role-tag {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--accent-blue);
+      letter-spacing: 0.5px;
+      margin-top: 0.5rem;
+    }
+
+    .main-section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--border-line);
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.9rem;
+      position: relative;
+    }
+
+    .main-section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #059669, #34d399);
+      border-radius: 9999px;
+    }
+
+    .section-paragraph {
+      font-size: 0.96rem;
+      color: var(--text-dark);
+      line-height: 1.7;
+      text-align: justify;
+      background: linear-gradient(135deg, #f7fbf9 0%, #ecfdf5 100%);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-left: 4px solid #10b981;
+      border-radius: 8px;
+      padding: 1.25rem 1.4rem;
+    }
+
+    .exp-item {
+      margin-top: 0.5rem;
+      background: linear-gradient(135deg, #f7fbf9 0%, #ecfdf5 100%);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-left: 5px solid #059669;
+      border-radius: 10px;
+      padding: 1.35rem 1.5rem;
+      box-shadow: 0 4px 15px rgba(5, 150, 105, 0.08);
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .exp-role {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+    }
+
+    .exp-period {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #047857;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+    }
+
+    .exp-company {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: #059669;
+      margin-bottom: 0.85rem;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding-left: 0.25rem;
+    }
+
+    .exp-bullets li {
+      position: relative;
+      padding-left: 1.35rem;
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      line-height: 1.55;
+    }
+
+    .exp-bullets li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #059669;
+      font-size: 0.95rem;
+      font-weight: 900;
+      top: 1px;
+    }
+
+    /* Print Stylesheet for exact 1-page A4 output */
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      .action-bar {
+        display: none !important;
+      }
+
+      .resume-sheet {
+        max-width: 100% !important;
+        width: 100% !important;
+        min-height: auto !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+      }
+
+      .resume-sidebar {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        background-color: #061a14 !important;
+        color: #f3f4f6 !important;
+      }
+
+      .resume-main {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+    }
+
+      .resume-main {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .resume-sheet {
+        flex-direction: column;
+      }
+
+      .resume-sidebar {
+        width: 100%;
+        padding: 2rem 1.5rem;
+      }
+
+      .resume-main {
+        width: 100%;
+        padding: 2rem 1.5rem;
+      }
+
+      .resume-name {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating Action Bar -->
+  <div class="action-bar">
+    <button class="action-btn btn-print" onclick="window.print()">
+      <i class="fa-solid fa-print"></i>
+      <span>Print / Save as PDF</span>
+    </button>
+    <a href="index.html#resume" class="action-btn btn-back">
+      <i class="fa-solid fa-arrow-left"></i>
+      <span>Back to Portfolio</span>
+    </a>
+  </div>
+
+  <!-- A4 Resume Sheet -->
+  <main class="resume-sheet" id="resumeDocument">
+    
+    <!-- Left Sidebar -->
+    <aside class="resume-sidebar">
+      <div class="sidebar-avatar-container">
+        <img src="assets/images/sinan.jpg" alt="Mumajjad Sinan EK" class="sidebar-avatar" />
+      </div>
+
+      <!-- Contact Block -->
+      <section>
+        <h2 class="sidebar-section-title">Contact</h2>
+        <div class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:6238973300">6238973300</a>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:Mumajjadsinan2@gmail.com">Mumajjadsinan2@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Malappuram, Kerala</span>
+        </div>
+      </section>
+
+      <!-- Education Block -->
+      <section>
+        <h2 class="sidebar-section-title">Education</h2>
+        
+        <div class="education-item">
+          <div class="edu-years">2023 - 2026</div>
+          <div class="edu-institution">Calicut University</div>
+          <div class="edu-degree">Bachelor of Computer Applications (BCA)</div>
+        </div>
+
+        <div class="education-item">
+          <div class="edu-years">2021 - 2022</div>
+          <div class="edu-institution">Higher Secondary Education (Plus Two)</div>
+          <div class="edu-degree">Computer Commerce<br />GHSS Pandikkad</div>
+        </div>
+      </section>
+
+      <!-- Skills Block -->
+      <section>
+        <h2 class="sidebar-section-title">Skills</h2>
+        <ul class="sidebar-list">
+          <li>Leadership & Team Management</li>
+          <li>Customer Relationship Management</li>
+          <li>Event Planning & Coordination</li>
+          <li>Operational Supervision</li>
+          <li>Teamwork & Collaboration</li>
+          <li>Passionate and Hardworking Attitude</li>
+        </ul>
+      </section>
+
+      <!-- Languages Block -->
+      <section>
+        <h2 class="sidebar-section-title">Languages</h2>
+        <ul class="sidebar-list">
+          <li>English (Fluent)</li>
+          <li>Malayalam (Fluent)</li>
+          <li>Arabic (Basics)</li>
+        </ul>
+      </section>
+    </aside>
+
+    <!-- Right Main Column -->
+    <section class="resume-main">
+      
+      <!-- Name Header -->
+      <div class="resume-name-block">
+        <h1 class="resume-name">Mumajjad Sinan EK</h1>
+        <p class="resume-role-tag">Captain & Site Manager | Event Operations Lead | BCA Professional</p>
+      </div>
+
+      <!-- Profile -->
+      <div>
+        <h2 class="main-section-title">Profile</h2>
+        <p class="section-paragraph">
+          I am Mumajjad Sinan EK, a BCA graduate with 3 years of experience in Event Management as a Captain and Site Manager. I have strong skills in team leadership, customer relationship management, event coordination, and operational supervision. I am a hardworking and dedicated professional who enjoys taking responsibility and ensuring successful event execution.
+        </p>
+      </div>
+
+      <!-- Work Experience -->
+      <div>
+        <h2 class="main-section-title">Work Experience</h2>
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-role">Captain & Site Manager</span>
+            <span class="exp-period">2026 - PRESENT</span>
+          </div>
+          <div class="exp-company">Elegant Event Management</div>
+          <ul class="exp-bullets">
+            <li>Managed event sites and supervised operational staff</li>
+            <li>Coordinated planning and execution of events</li>
+            <li>Handled customer relations and ensured client satisfaction</li>
+            <li>Controlled workflow and ensured smooth on-site operations</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Career Objective -->
+      <div>
+        <h2 class="main-section-title">Career Objective</h2>
+        <p class="section-paragraph">
+          Motivated and dedicated BCA graduate seeking an opportunity to utilize my leadership, communication, and management skills in a professional environment. Eager to contribute to organizational success while enhancing my knowledge and developing my career through continuous learning and hard work.
+        </p>
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>
